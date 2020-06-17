@@ -245,17 +245,18 @@ TEST_CASE("Filter False")
     CHECK(j != 0);
     CHECK(j != 2);
    
-    vector<string> result3 = {"aaa","bbb","ccc"};
+    vector<int> result3 = {4,10};
+    vector<int> vec{1,2,3};
     j=0;
-    for(string i : filterfalse([](string i){return i.size()>3;},vector<string>{"aa","aaa","bbb","ccc"}))
+    for(int i : filterfalse([](int i){return i>3;},accumulate(vec))
     {
         CHECK(i == result3.at(j));
         ++j;
     }
-    CHECK(j == 3);
-    CHECK(j != 4);
+    CHECK(j == 2);
+    CHECK(j != 3);
     CHECK(j != 0);
-    CHECK(j != 2);
+    CHECK(j != 1);
     
     vector<double> result4 = {3.2,3.6};
     j=0;
