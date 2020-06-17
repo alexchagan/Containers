@@ -99,7 +99,7 @@ double ans_d=0.0;
      ans_d = 0.0;
      for(double i: accumulate(vecDouble))
      ans_d+=i;
-     CHECK(ans_d == 2.5); 
+     CHECK(ans_d == 0.5); 
      
       ans_int=0;
      for(int i:accumulate(a))
