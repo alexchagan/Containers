@@ -119,16 +119,16 @@ double ans_d=0.0;
        ans_int=0;
      for(int i: accumulate(accumulate(vecInt)))
      ans_int+=i;
-     CHECK(ans_int == 10); 
+     CHECK(ans_int == 37); 
      
        ans_int=0;
      for(int i: accumulate(accumulate(accumulate(vecInt))))
      ans_int+=i;
-     CHECK(ans_int == 15); 
+     CHECK(ans_int == 64); 
      
     vector<int> result1 = {1,3,6};
     int j=0;
-    for(int i : vecInt)
+    for(int i : accumulate(vecInt))
     {
         CHECK(i == result1.at(j));
         ++j;
@@ -141,7 +141,7 @@ double ans_d=0.0;
     
     vector<int> result2 = {1};
     j=0;
-    for(int i : singleVecInt)
+    for(int i : accumulate(singleVecInt))
     {
         CHECK(i == result2.at(j));
         ++j;
