@@ -43,17 +43,27 @@ TEST_CASE("Range Test")
     for(int i: range(0,0))
      CHECK(i == ans_int + 1); 
     
+    
      ans_int=0;
     for(int i: range(1,2))
+    {
     CHECK(i == ans_int + 1); 
+    ++ans_int;
+    }
     
      ans_int=0;
     for(int i: range(1,4))
-      CHECK(i == ans_int + 1); 
+    {
+      CHECK(i == ans_int + 1);
+      ++ans_int;
+    }
     
      ans_int=-2;
     for(int i: range(-1,1))
+    {
      CHECK(i == ans_int + 1);
+     ++ans_int;
+    }
 }
 
 TEST_CASE("Test Basic Accumulate")
