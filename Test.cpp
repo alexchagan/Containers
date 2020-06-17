@@ -27,7 +27,7 @@ TEST_CASE("Range Test")
     
     vector<int> result2 = {-5,-4,-3,-2,-1};
     j=0;
-    for(int i : range(-5,1))
+    for(int i : range(-5,0))
     {
         CHECK(i == result2.at(j));
         ++j;
