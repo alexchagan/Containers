@@ -274,10 +274,10 @@ TEST_CASE("Filter False")
 TEST_CASE("COMPRESS")
 {
  
- vector<int> vecInt = {1,2,3};
- vector<bool> tff{true,false,false};
+//  vector<int> vecInt = {1,2,3};
+//  vector<bool> tff{true,false,false};
  
- CHECK_NOTHROW(compress(string("abc"), tff)); //76
+//  CHECK_NOTHROW(compress(string("abc"), tff)); //76
 //   CHECK_NOTHROW(compress(string("abc"), fff)); //77
 //   CHECK_NOTHROW(compress(string("abc"), ttt)); //78
 //   CHECK_NOTHROW(compress(string("abc"), tft)); //79
