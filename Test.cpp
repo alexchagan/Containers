@@ -92,7 +92,7 @@ double ans_d=0.0;
     CHECK(ans_int == 1); 
     
     ans_str = "";
-    for(string i: accumulate(vecString))
+    for(auto i: accumulate(vecString))
     ans_str+=i;
     CHECK(ans_str == "ThisThisIsThisIsWorking"); 
       
@@ -107,7 +107,7 @@ double ans_d=0.0;
      CHECK(ans_int == -10); 
      
      ans_str = "";
-     for(string i: accumulate(l))
+     for(auto i: accumulate(l))
      ans_str+=i;
      CHECK(ans_str == "VeryVeryGood"); 
     
