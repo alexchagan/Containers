@@ -91,11 +91,6 @@ double ans_d=0.0;
     ans_int+=i;
     CHECK(ans_int == 1); 
     
-    // ans_str = "";
-    // for(auto i: accumulate(vecString))
-    // ans_str+=i;
-    // CHECK(ans_str == "ThisThisIsThisIsWorking"); 
-      
      ans_d = 0.0;
      for(double i: accumulate(vecDouble))
      ans_d+=i;
@@ -106,11 +101,6 @@ double ans_d=0.0;
      ans_int+=i;
      CHECK(ans_int == -10); 
      
-    //  ans_str = "";
-    //  for(auto i: accumulate(l))
-    //  ans_str+=i;
-    //  CHECK(ans_str == "VeryVeryGood"); 
-    
       ans_int=0;
     for(int i: accumulate(r))
      ans_int+=i;
@@ -150,6 +140,31 @@ double ans_d=0.0;
     CHECK(j == 1);
     CHECK(j != 2);
     CHECK(j != 0);
+    
+    vector<string> result3 = {"This","ThisIs","ThisIsWorking"};
+    j=0;
+    for(auto i : accumulate(vecString))
+    {
+        CHECK(i == result3.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 2);
+    CHECK(j != 0);
+    CHECK(j != 4);
+    
+    vector<string> result3 = {"Very","VeryGood"};
+    j=0;
+    for(auto i : accumulate(l))
+    {
+        CHECK(i == result3.at(j));
+        ++j;
+    }
+    CHECK(j == 2);
+    CHECK(j != 3);
+    CHECK(j != 0);
+    CHECK(j != 1);
+    
 
 }
     
