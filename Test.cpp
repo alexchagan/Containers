@@ -15,7 +15,7 @@ TEST_CASE("Range Test")
 {
     vector<int> result1 = {1,2,3,4,5};
     int j=0;
-    for(int i : range(0,6))
+    for(int i : range(1,6))
     {
         CHECK(i == result1.at(j));
         ++j;
