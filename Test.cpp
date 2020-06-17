@@ -51,15 +51,15 @@ range r(1,3);
 
 TEST_CASE("Basic Accumulate Tests")
 {
-     //CHECK_NOTHROW(accumulate(vecInt)); //8
-   //  CHECK_NOTHROW(accumulate(singleVecInt)); //9
-   //  CHECK_THROWS(accumulate(emptyVecInt)); //10
-   //  CHECK_NOTHROW(accumulate(vecString)); //11
-   //  CHECK_NOTHROW(accumulate(vecDouble)); //12
-   //  CHECK_NOTHROW(accumulate(a)); //13
-   //  CHECK_NOTHROW(accumulate(l)); //14
-   //  CHECK_NOTHROW(accumulate(r)); //15
-  //   CHECK_NOTHROW(accumulate(accumulate(vecInt))); //22
+     CHECK_NOTHROW(accumulate(vecInt)); //8
+    CHECK_NOTHROW(accumulate(singleVecInt)); //9
+    CHECK_THROWS(accumulate(emptyVecInt)); //10
+    CHECK_NOTHROW(accumulate(vecString)); //11
+    CHECK_NOTHROW(accumulate(vecDouble)); //12
+    CHECK_NOTHROW(accumulate(a)); //13
+    CHECK_NOTHROW(accumulate(l)); //14
+    CHECK_NOTHROW(accumulate(r)); //15
+    CHECK_NOTHROW(accumulate(accumulate(vecInt))); //22
      
      
        ans_int=0;
@@ -122,8 +122,7 @@ TEST_CASE("Accumulate With Binary Operator")
 //      CHECK_NOTHROW(accumulate(r,[](int x, int y){return x+y;})); //34
 //      CHECK_NOTHROW(accumulate(accumulate(vecInt),[](int x, int y){return x+y;})); //35
 //      CHECK_THROWS(accumulate(accumulate(vecString,[](string x, string y){return x/y;}))); //97
-     vector<int> vecInt = {1,2,3};
-    
+   
       ans_int=0;
      for(int i: accumulate(vecInt,[](int x, int y){return x+y;}))
      ans_int+=i;
