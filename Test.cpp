@@ -153,7 +153,7 @@ double ans_d=0.0;
     CHECK(j != 0);
     CHECK(j != 4);
     
-    vector<string> result4 = {"Very","VeryGood"};
+    vector<basic_string> result4 = {"Very","VeryGood"};
     j=0;
     for(auto i : accumulate(l))
     {
