@@ -122,7 +122,8 @@ TEST_CASE("Accumulate With Binary Operator")
 //      CHECK_NOTHROW(accumulate(r,[](int x, int y){return x+y;})); //34
 //      CHECK_NOTHROW(accumulate(accumulate(vecInt),[](int x, int y){return x+y;})); //35
 //      CHECK_THROWS(accumulate(accumulate(vecString,[](string x, string y){return x/y;}))); //97
-     
+     vector<int> vecInt = {1,2,3};
+    
       ans_int=0;
      for(int i: accumulate(vecInt,[](int x, int y){return x+y;}))
      ans_int+=i;
