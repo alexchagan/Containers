@@ -192,7 +192,7 @@ TEST_CASE("Accumulate with binary operator")
     CHECK(j != 4);
     CHECK(j != 0);
     CHECK(j != 2);
-}
+
 
 vector<int> result2 = {1,2,6};
      j=0;
