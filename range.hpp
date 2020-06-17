@@ -47,5 +47,4 @@ namespace itertools {
     };
 }
 
-
 #endif //ITERTOOLS_CFAR_A_RANGE_HPP

@@ -12,12 +12,12 @@ namespace itertools {
     class filterfalse {
         functor _functor;
         Iter & _iter;
-        decltype((_iter.begin())) beg;//decltype uses to deduce runtime type of an object
-        decltype((_iter.end())) end_iter;
+        decltype((_iter.begin())) _beg;//decltype uses to deduce runtime type of an object
+        decltype((_iter.end())) _end_iter;
 
     public:
-        filterfalse(functor func, Iter && iter): _functor(func), _iter(iter), beg(_iter.begin()), end_iter(iter.end()){}
-        filterfalse(functor func, Iter & iter): _functor(func), _iter(iter), beg(_iter.begin()), end_iter(iter.end()){}
+        filterfalse(functor func, Iter && iter): _functor(func), _iter(iter), _beg(_iter.begin()), _end_iter(iter.end()){}
+        filterfalse(functor func, Iter & iter): _functor(func), _iter(iter), _beg(_iter.begin()), _end_iter(iter.end()){}
 
         class iterator
         {
@@ -53,8 +53,8 @@ namespace itertools {
             } //prefix ++
         };
 
-        iterator begin() { return iterator(_functor, beg, _iter); }
-        iterator end()   { return iterator(_functor, end_iter, _iter); }
+        iterator begin() { return iterator(_functor, _beg, _iter); }
+        iterator end()   { return iterator(_functor, _end_iter, _iter); }
     };
 }
 
