@@ -248,7 +248,7 @@ TEST_CASE("Filter False")
     vector<int> result3 = {4,10};
     vector<int> vec{1,2,3};
     j=0;
-    for(int i : filterfalse([](int i){return i>3;},accumulate(vec))
+    for(int i : filterfalse([](int i){return i>3;},accumulate(vec)))
     {
         CHECK(i == result3.at(j));
         ++j;
