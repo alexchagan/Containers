@@ -8,6 +8,7 @@
 #include "filterfalse.hpp"
 #include "compress.hpp"
 using namespace std;
+using namespace itertools;
 
 int ans_int=0;
 string ans_str="";
