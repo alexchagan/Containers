@@ -181,8 +181,8 @@ TEST_CASE("Accumulate with binary operator")
     CHECK(j != 0);
     CHECK(j != 2);
     
-     vector<int> result3 = {0.5,1.0,1.5};
-    int j=0;
+     vector<double> result3 = {0.5,1.0,1.5};
+     j=0;
     for(double i : accumulate(vector<double>{0.5,0.5,0.5}{,[](int x, int y){return x+y;}))
     {
         CHECK(i == result3.at(j));
@@ -195,7 +195,7 @@ TEST_CASE("Accumulate with binary operator")
 }
 
 vector<int> result2 = {1,2,6};
-    int j=0;
+     j=0;
     for(int i : accumulate(vector<int>{1,2,3} ,[](int x, int y){return x*y;}))
     {
         CHECK(i == result2.at(j));
@@ -207,8 +207,8 @@ vector<int> result2 = {1,2,6};
     CHECK(j != 2);
 
 vector<string> result4 = {"This","ThisIs","ThisIsWorking"};
-    int j=0;
-    for(int i : accumulate(vector<string>{"This","Is","Working"},[](int x, int y){return x+y;}))
+     j=0;
+    for(string i : accumulate(vector<string>{"This","Is","Working"},[](int x, int y){return x+y;}))
     {
         CHECK(i == result4.at(j));
         ++j;
