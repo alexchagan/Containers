@@ -51,7 +51,7 @@ range r(1,3);
 
 TEST_CASE("Basic Accumulate Tests")
 {
-     CHECK_NOTHROW(accumulate(vecInt)); //8
+     CHECK_NOTHROW(accumulate a(vecInt)); //8
     CHECK_NOTHROW(accumulate(singleVecInt)); //9
     CHECK_THROWS(accumulate(emptyVecInt)); //10
     CHECK_NOTHROW(accumulate(vecString)); //11
