@@ -288,7 +288,7 @@ TEST_CASE("COMPRESS")
   CHECK_NOTHROW(compress(string("abc"), ttt)); //78
   CHECK_NOTHROW(compress(string("abc"), tft)); //79
   CHECK_NOTHROW(compress(string("abc"), fft)); //80
-  CHECK_NOTHROW(compress(vecInt, ttt)); //81
+  //CHECK_NOTHROW(compress(vecInt, ttt)); //81
   CHECK_NOTHROW(compress(123, tff)); //82
 //   CHECK_NOTHROW(compress(accumulate(vecInt), tff)); //83
 //   CHECK_NOTHROW(compress( accumulate(vecInt,[](int x, int y){return x*y;}), fft) ); //84
