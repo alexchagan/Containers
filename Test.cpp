@@ -116,7 +116,7 @@ double ans_d=0.0;
      ans_int+=i;
      CHECK(ans_int == 64); 
      
-    vecInt {1,2,3};
+    vector<int> vecInt {1,2,3};
     vector<int> result1 {1,3,6};
     int j=0;
     for(int i : accumulate(vecInt))
