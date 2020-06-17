@@ -153,18 +153,86 @@ double ans_d=0.0;
     CHECK(j != 0);
     CHECK(j != 4);
     
-//     vector<basic_string> result4 = {"Very","VeryGood"};
-//     j=0;
-//     for(auto i : accumulate(l))
+    vector<double> result4 = {0.5,1.0,1.5};
+    j=0;
+    for(double i : accumulate(vector<double>{0.5,0.5,0.5})
+    {
+        CHECK(i == result4.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 2);
+    CHECK(j != 0);
+    CHECK(j != 4);
+}
+
+TEST_CASE("Accumulate with binary operator")
+{
+
+    vector<int> result1 = {1,3,6};
+    int j=0;
+    for(int i : accumulate(range(1,4),[](int x, int y){return x+y;}))
+    {
+        CHECK(i == result1.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 4);
+    CHECK(j != 0);
+    CHECK(j != 2);
+    
+     vector<int> result3 = {0.5,1.0,1.5};
+    int j=0;
+    for(double i : accumulate(vector<double>{0.5,0.5,0.5}{,[](int x, int y){return x+y;}))
+    {
+        CHECK(i == result3.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 4);
+    CHECK(j != 0);
+    CHECK(j != 2);
+}
+
+vector<int> result2 = {1,2,6};
+    int j=0;
+    for(int i : accumulate(vector<int>{1,2,3} ,[](int x, int y){return x*y;}))
+    {
+        CHECK(i == result2.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 4);
+    CHECK(j != 0);
+    CHECK(j != 2);
+
+vector<string> result4 = {"This","ThisIs","ThisIsWorking"};
+    int j=0;
+    for(int i : accumulate(vector<string>{"This","Is","Working"},[](int x, int y){return x+y;}))
+    {
+        CHECK(i == result4.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 4);
+    CHECK(j != 0);
+    CHECK(j != 2);
+}
+
+// TEST_CASE("Filter False")
+// {
+//     vector<int> result1 = {2,4,6};
+//     int j=0;
+//     for(int i : accumulate(,range(2,7)))
 //     {
-//         CHECK(i == result4.at(j));
+//         CHECK(i == result1.at(j));
 //         ++j;
 //     }
-//     CHECK(j == 2);
-//     CHECK(j != 3);
+//     CHECK(j == 3);
+//     CHECK(j != 4);
 //     CHECK(j != 0);
-//     CHECK(j != 1);
+//     CHECK(j != 2);
     
+// }
 
-}
     
