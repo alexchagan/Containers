@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <list>
 #include <iostream>
 #include "range.hpp"
 #include "accumulate.hpp"
