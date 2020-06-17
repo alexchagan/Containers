@@ -9,10 +9,11 @@
 #include "filterfalse.hpp"
 #include "compress.hpp"
 using namespace std;
+using namespace range;
 
 TEST_CASE("Range Test")
 {
-    vector<int> result1 = {1,2,3,4,5}
+    vector<int> result1 = {1,2,3,4,5};
     int j=0;
     for(int i : range(0,6))
     {
@@ -24,7 +25,7 @@ TEST_CASE("Range Test")
     CHECK(j != 0);
     CHECK(j != 6);
     
-    vector<int> result2 = {-5,-4,-3,-2,-1}
+    vector<int> result2 = {-5,-4,-3,-2,-1};
     int j=0;
     for(int i : range(-5,1))
     {
