@@ -274,7 +274,6 @@ TEST_CASE("Filter False")
 TEST_CASE("COMPRESS")
 {
  
- vector<int> vecInt = {1,2,3};
  vector<bool> tff{true,false,false};
  vector<bool> fff{false,false,false};
  vector<bool> ttt{true,true,true};
@@ -282,22 +281,51 @@ TEST_CASE("COMPRESS")
  vector<bool> fft{false,false,true};
  vector<bool> tfft{true,false,false,true};
  
- 
- CHECK_NOTHROW(compress(string("abc"), tff)); //76
+  CHECK_NOTHROW(compress(string("abc"), tff)); //76
   CHECK_NOTHROW(compress(string("abc"), fff)); //77
   CHECK_NOTHROW(compress(string("abc"), ttt)); //78
   CHECK_NOTHROW(compress(string("abc"), tft)); //79
   CHECK_NOTHROW(compress(string("abc"), fft)); //80
-  CHECK_NOTHROW(for(auto i :compress(vecInt, ttt)); //81
+  
+    vector<int> result1 = {2,4,6};
+    int j=0;
+    for(int i : compress(reuslt1,ttt))
+    {
+        CHECK(i == result1.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 4);
+    CHECK(j != 0);
+    CHECK(j != 2);
+    
+    // vector<int> result2 = {2,2,2};
+    // j=0;
+    // for(int i : compress())
+    // {
+    //     CHECK(i == result2.at(j));
+    //     ++j;
+    // }
+    // CHECK(j == 3);
+    // CHECK(j != 4);
+    // CHECK(j != 0);
+    // CHECK(j != 2);
+   
+    // vector<int> result3 = {4,10};
+    // vector<int> vec{1,2,3};
+    // j=0;
+    // for(int i : compress())
+    // {
+    //     CHECK(i == result3.at(j));
+    //     ++j;
+    // }
+    // CHECK(j == 2);
+    // CHECK(j != 3);
+    // CHECK(j != 0);
+    // CHECK(j != 1);
+  
  
-//   CHECK_NOTHROW(compress(accumulate(vecInt), tff)); //83
-//   CHECK_NOTHROW(compress( accumulate(vecInt,[](int x, int y){return x*y;}), fft) ); //84
-//   CHECK_NOTHROW(compress( filterfalse([](int i){return i%2==0},accumulate(vecInt,[](int x, int y){return x*y;})), fft)); //85
-//   CHECK_THROWS(compress(string("abc"), tfft)); //86
-//   CHECK_THROWS(compress(string("abcd"), tff)); //88
-//   CHECK_THROWS(compress(string("abc"), f ft)); //87
-//   CHECK_THROWS(compress()); //99
-//   CHECK_THROWS(compress(tf)); //100
+
       
 }
 
