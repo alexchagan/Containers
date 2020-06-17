@@ -155,7 +155,7 @@ double ans_d=0.0;
     
     vector<double> result4 = {0.5,1.0,1.5};
     j=0;
-    for(double i : accumulate(vector<double>{0.5,0.5,0.5})
+    for(double i : accumulate(vector<double>{0.5,0.5,0.5}))
     {
         CHECK(i == result4.at(j));
         ++j;
@@ -183,7 +183,7 @@ TEST_CASE("Accumulate with binary operator")
     
      vector<double> result3 = {0.5,1.0,1.5};
      j=0;
-    for(double i : accumulate(vector<double>{0.5,0.5,0.5}{,[](int x, int y){return x+y;}))
+    for(double i : accumulate(vector<double>{0.5,0.5,0.5},[](int x, int y){return x+y;}))
     {
         CHECK(i == result3.at(j));
         ++j;
