@@ -153,11 +153,11 @@ double ans_d=0.0;
     CHECK(j != 0);
     CHECK(j != 4);
     
-    vector<string> result3 = {"Very","VeryGood"};
+    vector<string> result4 = {"Very","VeryGood"};
     j=0;
     for(auto i : accumulate(l))
     {
-        CHECK(i == result3.at(j));
+        CHECK(i == result4.at(j));
         ++j;
     }
     CHECK(j == 2);
