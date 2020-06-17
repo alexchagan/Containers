@@ -153,17 +153,17 @@ double ans_d=0.0;
     CHECK(j != 0);
     CHECK(j != 4);
     
-    vector<basic_string> result4 = {"Very","VeryGood"};
-    j=0;
-    for(auto i : accumulate(l))
-    {
-        CHECK(i == result4.at(j));
-        ++j;
-    }
-    CHECK(j == 2);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
+//     vector<basic_string> result4 = {"Very","VeryGood"};
+//     j=0;
+//     for(auto i : accumulate(l))
+//     {
+//         CHECK(i == result4.at(j));
+//         ++j;
+//     }
+//     CHECK(j == 2);
+//     CHECK(j != 3);
+//     CHECK(j != 0);
+//     CHECK(j != 1);
     
 
 }
