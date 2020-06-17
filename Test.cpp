@@ -247,7 +247,7 @@ TEST_CASE("Filter False")
    
     vector<string> result3 = {"aaa","bbb","ccc"};
     j=0;
-    for(auto i : filterfalse([](string i){return i.size()>3;},vector<string>{"aa","aaa","bbb","ccc"}))
+    for(string i : filterfalse([](string i){return i.size()>3;},vector<string>{"aa","aaa","bbb","ccc"}))
     {
         CHECK(i == result3.at(j));
         ++j;
