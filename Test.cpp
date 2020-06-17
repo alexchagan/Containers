@@ -13,7 +13,7 @@ using namespace itertools;
 
 TEST_CASE("Range Test")
 {
-    vector<int> result1 = {1,2,3,4,5};
+    vector<int> result1 {1,2,3,4,5};
     int j=0;
     for(int i : range(1,6))
     {
@@ -25,7 +25,7 @@ TEST_CASE("Range Test")
     CHECK(j != 0);
     CHECK(j != 6);
     
-    vector<int> result2 = {-5,-4,-3,-2,-1};
+    vector<int> result2 {-5,-4,-3,-2,-1};
     j=0;
     for(int i : range(-5,0))
     {
@@ -69,12 +69,12 @@ TEST_CASE("Range Test")
 TEST_CASE("Test Basic Accumulate")
 {
     
-vector<int> vecInt = {1,2,3};
+vector<int> vecInt {1,2,3};
 vector<int> singleVecInt {1};
-vector<string> vecString = {"This", "Is", "Working"};
-vector<double> vecDouble = {0.5, -2.0, 3.0};
-array<int, 3> a = {-1,-2,-3};
-list<string> l = {"Very" , "Good" };
+vector<string> vecString {"This", "Is", "Working"};
+vector<double> vecDouble {0.5, -2.0, 3.0};
+array<int, 3> a {-1,-2,-3};
+list<string> l {"Very" , "Good" };
 range r(1,3);
 
 int ans_int=0;
@@ -116,8 +116,8 @@ double ans_d=0.0;
      ans_int+=i;
      CHECK(ans_int == 64); 
      
-    vecInt = {1,2,3};
-    vector<int> result1 = {1,3,6};
+    vecInt {1,2,3};
+    vector<int> result1 {1,3,6};
     int j=0;
     for(int i : accumulate(vecInt))
     {
@@ -130,7 +130,7 @@ double ans_d=0.0;
     CHECK(j != 2);
     
     
-    vector<int> result2 = {1};
+    vector<int> result2 {1};
     j=0;
     for(int i : accumulate(singleVecInt))
     {
@@ -141,7 +141,7 @@ double ans_d=0.0;
     CHECK(j != 2);
     CHECK(j != 0);
     
-    vector<string> result3 = {"This","ThisIs","ThisIsWorking"};
+    vector<string> result3 {"This","ThisIs","ThisIsWorking"};
     j=0;
     for(auto i : accumulate(vecString))
     {
@@ -153,7 +153,7 @@ double ans_d=0.0;
     CHECK(j != 0);
     CHECK(j != 4);
     
-    vector<double> result4 = {0.5,1.0,1.5};
+    vector<double> result4 {0.5,1.0,1.5};
     j=0;
     for(double i : accumulate(vector<double>{0.5,0.5,0.5}))
     {
@@ -169,7 +169,7 @@ double ans_d=0.0;
 TEST_CASE("Accumulate with binary operator")
 {
 
-    vector<int> result1 = {1,3,6};
+    vector<int> result1 {1,3,6};
     int j=0;
     for(int i : accumulate(range(1,4),[](int x, int y){return x+y;}))
     {
@@ -181,7 +181,7 @@ TEST_CASE("Accumulate with binary operator")
     CHECK(j != 0);
     CHECK(j != 2);
     
-     vector<double> result3 = {0.5,1.0,1.5};
+     vector<double> result3 {0.5,1.0,1.5};
      j=0;
     for(double i : accumulate(vector<double>{0.5,0.5,0.5},[](double x, double y){return x+y;}))
     {
@@ -194,7 +194,7 @@ TEST_CASE("Accumulate with binary operator")
     CHECK(j != 2);
 
 
-vector<int> result2 = {1,2,6};
+vector<int> result2 {1,2,6};
      j=0;
     for(int i : accumulate(vector<int>{1,2,3} ,[](int x, int y){return x*y;}))
     {
@@ -206,7 +206,7 @@ vector<int> result2 = {1,2,6};
     CHECK(j != 0);
     CHECK(j != 2);
 
-vector<string> result4 = {"This","ThisIs","ThisIsWorking"};
+vector<string> result4 {"This","ThisIs","ThisIsWorking"};
      j=0;
     for(string i : accumulate(vector<string>{"This","Is","Working"},[](string x, string y){return x+y;}))
     {
@@ -221,7 +221,7 @@ vector<string> result4 = {"This","ThisIs","ThisIsWorking"};
 
 TEST_CASE("Filter False")
 {
-    vector<int> result1 = {2,4,6};
+    vector<int> result1 {2,4,6};
     int j=0;
     for(int i : filterfalse([](int i){return i%2==0;},range(2,7)))
     {
@@ -233,7 +233,7 @@ TEST_CASE("Filter False")
     CHECK(j != 0);
     CHECK(j != 2);
     
-    vector<int> result2 = {2,2,2};
+    vector<int> result2 {2,2,2};
     j=0;
     for(int i : filterfalse([](int i){return i+i==4;},vector<int>{1,2,3,2,4,2}))
     {
@@ -245,7 +245,7 @@ TEST_CASE("Filter False")
     CHECK(j != 0);
     CHECK(j != 2);
    
-    vector<int> result3 = {4,10};
+    vector<int> result3 {4,10};
     vector<int> vec{1,2,3};
     j=0;
     for(int i : filterfalse([](int i){return i>3;},accumulate(vec)))
@@ -258,7 +258,7 @@ TEST_CASE("Filter False")
     CHECK(j != 0);
     CHECK(j != 1);
     
-    vector<double> result4 = {3.2,3.6};
+    vector<double> result4 {3.2,3.6};
     j=0;
     for(double i : filterfalse([](double i){return i>3;},vector<double>{2.2,3.2,3.6}))
     {
@@ -287,9 +287,9 @@ TEST_CASE("COMPRESS")
   CHECK_NOTHROW(compress(string("abc"), tft)); //79
   CHECK_NOTHROW(compress(string("abc"), fft)); //80
   
-    vector<int> result1 = {2,4,6};
+    vector<int> result1{2,4,6};
     int j=0;
-    for(int i : compress(reuslt1,ttt))
+    for(auto i : compress(reuslt1,ttt))
     {
         CHECK(i == result1.at(j));
         ++j;
