@@ -51,15 +51,15 @@ range r(1,3);
 
 TEST_CASE("Basic Accumulate Tests")
 {
-     CHECK_NOTHROW(accumulate a(vecInt)); //8
-    CHECK_NOTHROW(accumulate a(singleVecInt)); //9
-    CHECK_THROWS(accumulate a(emptyVecInt)); //10
-    CHECK_NOTHROW(accumulate a(vecString)); //11
-    CHECK_NOTHROW(accumulate a(vecDouble)); //12
-    CHECK_NOTHROW(accumulate a(a)); //13
-    CHECK_NOTHROW(accumulate a(l)); //14
-    CHECK_NOTHROW(accumulate a(r)); //15
-    CHECK_NOTHROW(accumulate a(accumulate b(vecInt))); //22
+     CHECK_NOTHROW(accumulate acc(vecInt)); //8
+    CHECK_NOTHROW(accumulate acc(singleVecInt)); //9
+    CHECK_THROWS(accumulate acc(emptyVecInt)); //10
+    CHECK_NOTHROW(accumulate acc(vecString)); //11
+    CHECK_NOTHROW(accumulate acc(vecDouble)); //12
+    CHECK_NOTHROW(accumulate acc(a)); //13
+    CHECK_NOTHROW(accumulate acc(l)); //14
+    CHECK_NOTHROW(accumulate acc(r)); //15
+    CHECK_NOTHROW(accumulate acc(accumulate acc2(vecInt))); //22
      
      
        ans_int=0;
