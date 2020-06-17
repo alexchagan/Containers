@@ -9,7 +9,7 @@
 #include "filterfalse.hpp"
 #include "compress.hpp"
 using namespace std;
-using namespace range;
+using namespace itertools;
 
 TEST_CASE("Range Test")
 {
