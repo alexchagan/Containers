@@ -112,17 +112,17 @@ TEST_CASE("Basic Accumulate Tests")
 
 TEST_CASE("Accumulate With Binary Operator")
 {
-//      CHECK_NOTHROW(accumulate(vecInt,[](int x, int y){return x+y;})); //26
-//      CHECK_NOTHROW(accumulate(singleVecInt,[](int x, int y){return x*y;})); //27
-//      CHECK_THROWS(accumulate(emptyVecInt,[](int x, int y){return x+y;})); //28
-//      CHECK_NOTHROW(accumulate(vecString,[](string x, string y){return x+y;}));//29
-//      CHECK_THROWS(accumulate(vecString,[](string x, string y){return x*y;}));//30
-//      CHECK_NOTHROW(accumulate(vecDouble,[](double x, double y){return x/y;})); //31
-//      CHECK_NOTHROW(accumulate(a,[](int x, int y){return x-y;})); //32
-//      CHECK_NOTHROW(accumulate(l,[](string x, string y){return x+y;})); //33
-//      CHECK_NOTHROW(accumulate(r,[](int x, int y){return x+y;})); //34
-//      CHECK_NOTHROW(accumulate(accumulate(vecInt),[](int x, int y){return x+y;})); //35
-//      CHECK_THROWS(accumulate(accumulate(vecString,[](string x, string y){return x/y;}))); //97
+     CHECK_NOTHROW(accumulate acc(vecInt,[](int x, int y){return x+y;})); //26
+     CHECK_NOTHROW(accumulate(singleVecInt,[](int x, int y){return x*y;})); //27
+     CHECK_THROWS(accumulate(emptyVecInt,[](int x, int y){return x+y;})); //28
+     CHECK_NOTHROW(accumulate(vecString,[](string x, string y){return x+y;}));//29
+     CHECK_THROWS(accumulate(vecString,[](string x, string y){return x*y;}));//30
+     CHECK_NOTHROW(accumulate(vecDouble,[](double x, double y){return x/y;})); //31
+     CHECK_NOTHROW(accumulate(a,[](int x, int y){return x-y;})); //32
+     CHECK_NOTHROW(accumulate(l,[](string x, string y){return x+y;})); //33
+     CHECK_NOTHROW(accumulate(r,[](int x, int y){return x+y;})); //34
+     CHECK_NOTHROW(accumulate(accumulate(vecInt),[](int x, int y){return x+y;})); //35
+     CHECK_THROWS(accumulate(accumulate(vecString,[](string x, string y){return x/y;}))); //97
    
       ans_int=0;
      for(int i: accumulate(vecInt,[](int x, int y){return x+y;}))
