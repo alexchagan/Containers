@@ -235,7 +235,7 @@ TEST_CASE("Filter False")
     
     vector<int> result2 = {2,2,2};
     j=0;
-    for(int i : filterfalse([](int i){return i+i==4;},vector<int>{1,2,3,2,4,2})
+    for(int i : filterfalse([](int i){return i+i==4;},vector<int>{1,2,3,2,4,2}))
     {
         CHECK(i == result2.at(j));
         ++j;
