@@ -37,9 +37,6 @@ TEST_CASE("Range Tests")
     
     CHECK_THROWS(range(2,1)); //7
     CHECK_THROWS(range(-1,-3)); //49
-    CHECK_THROWS(range("a","c")); //48
-    CHECK_THROWS(range(0.5,1)); //50
-    CHECK_THROWS(range()); //95
 }
 
 vector<int> vecInt = {1,2,3};
@@ -117,14 +114,14 @@ TEST_CASE("Accumulate With Binary Operator")
      CHECK_NOTHROW(accumulate(vecInt,[](int x, int y){return x+y;})); //26
      CHECK_NOTHROW(accumulate(singleVecInt,[](int x, int y){return x*y;})); //27
      CHECK_THROWS(accumulate(emptyVecInt,[](int x, int y){return x+y;})); //28
-     CHECK_NOTHROW(accumulate(vecString,[](int x, int y){return x+y;}));//29
-     CHECK_THROWS(accumulate(vecString,[](int x, int y){return x*y;}));//30
-     CHECK_NOTHROW(accumulate(vecDouble,[](int x, int y){return x/y;})); //31
+     CHECK_NOTHROW(accumulate(vecString,[](string x, string y){return x+y;}));//29
+     CHECK_THROWS(accumulate(vecString,[](string x, string y){return x*y;}));//30
+     CHECK_NOTHROW(accumulate(vecDouble,[](double x, double y){return x/y;})); //31
      CHECK_NOTHROW(accumulate(a,[](int x, int y){return x-y;})); //32
-     CHECK_NOTHROW(accumulate(l,[](int x, int y){return x*y;})); //33
+     CHECK_NOTHROW(accumulate(l,[](string x, string y){return x+y;})); //33
      CHECK_NOTHROW(accumulate(r,[](int x, int y){return x+y;})); //34
      CHECK_NOTHROW(accumulate(accumulate(vecInt),[](int x, int y){return x+y;})); //35
-     CHECK_THROWS(accumulate(accumulate(vecInt),"test")); //97
+     CHECK_THROWS(accumulate(accumulate(vecString,[](string x, string y){return x/y;}))); //97
      
       ans_int=0;
      for(int i: accumulate(vecInt,[](int x, int y){return x+y;}))
@@ -147,12 +144,12 @@ TEST_CASE("Accumulate With Binary Operator")
      CHECK(ans_int == 1); //37
     
     ans_str = "";
-     for(string i: accumulate(vecString,[](int x, int y){return x+y;}))
+     for(string i: accumulate(vecString,[](string x, string y){return x+y;}))
      ans_str+=i;
      CHECK(ans == "ThisThisIsThisIsWorking"); //38
      
      ans_d = 0.0;
-     for(double i: accumulate(vecDouble,[](int x, int y){return x/y;}))
+     for(double i: accumulate(vecDouble,[](double x, double y){return x/y;}))
      ans_d+=i;
      CHECK(ans == 0.2); //39
      
@@ -162,7 +159,7 @@ TEST_CASE("Accumulate With Binary Operator")
      CHECK(ans_int == 4); //40
      
      ans_str = "";
-     for(string i: accumulate(l,[](int x, int y){return x+y;}))
+     for(string i: accumulate(l,[](string x, string y){return x+y;}))
      ans_str+=i;
      CHECK(ans_str == "VeryVeryGood"); //41
     
@@ -181,9 +178,9 @@ TEST_CASE("Accumulate With Binary Operator")
      ans_int+=i;
      CHECK(ans_int == 21); // 44
      
-     CHECK_THROWS(accumulate(vecString,[](int x, int y){return x/y;})); //45
-     CHECK_THROWS(accumulate(vecString,[](int x, int y){return x%y;})); //46
-     CHECK_THROWS(accumulate(vecString,[](int x, int y){return x-y;})); //47
+     CHECK_THROWS(accumulate(vecString,[](string x, string y){return x/y;})); //45
+     CHECK_THROWS(accumulate(vecString,[](string x, string y){return x%y;})); //46
+     CHECK_THROWS(accumulate(vecString,[](string x, string y){return x-y;})); //47
      
 }
 
@@ -217,7 +214,7 @@ TEST_CASE("Filter False")
   CHECK_THROWS(filterfalse([](int i){return i.size()==4},vecString)); //64
   CHECK_THROWS(filterfalse([](string i){return i%2==0},vecString)); //65
   CHECK_THROWS(filterfalse([](int i){return i%2==0},emptyVecInt)); //66
-  CHECK_THROWS(filterfalse()); //98
+  CHECK_THROWS(filterfalse([](string i){return i+i==2},vecString); //98
   
   ans_str ="";
   for(int i: filterfalse(  lessThan3{}, vecInt  ))
@@ -285,8 +282,8 @@ TEST_CASE("Filter False")
   CHECK_THROWS(compress(string("abc"), dft)); //87
   CHECK_THROWS(compress(string("abcd"), tff)); //88
   CHECK_THROWS(compress(string("abc"), f ft)); //87
-   CHECK_THROWS(compress()); //99
-   CHECK_THROWS(compress(tf)); //100
+   CHECK_THROWS(compress(range(1,2),tt); //99
+   CHECK_THROWS(compress(string(""),t)); //100
    
   ans_str ="";
   for(string i: compress(  string("abc"), tff  ))
