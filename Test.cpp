@@ -59,7 +59,7 @@ TEST_CASE("Basic Accumulate Tests")
     CHECK_NOTHROW(accumulate a(a)); //13
     CHECK_NOTHROW(accumulate a(l)); //14
     CHECK_NOTHROW(accumulate a(r)); //15
-    CHECK_NOTHROW(accumulate a(accumulate(vecInt))); //22
+    CHECK_NOTHROW(accumulate a(accumulate b(vecInt))); //22
      
      
        ans_int=0;
