@@ -219,20 +219,56 @@ vector<string> result4 = {"This","ThisIs","ThisIsWorking"};
     CHECK(j != 2);
 }
 
-// TEST_CASE("Filter False")
-// {
-//     vector<int> result1 = {2,4,6};
-//     int j=0;
-//     for(int i : accumulate(,range(2,7)))
-//     {
-//         CHECK(i == result1.at(j));
-//         ++j;
-//     }
-//     CHECK(j == 3);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
+TEST_CASE("Filter False")
+{
+    vector<int> result1 = {2,4,6};
+    int j=0;
+    for(int i : filterfalse([](int i){return i%2==0;},range(2,7)))
+    {
+        CHECK(i == result1.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 4);
+    CHECK(j != 0);
+    CHECK(j != 2);
     
-// }
+    vector<int> result2 = {2,2,2};
+    j=0;
+    for(int i : filterfalse([](int i){return i+i==4;},vector<int>{1,2,3,2,4,2})
+    {
+        CHECK(i == result2.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 4);
+    CHECK(j != 0);
+    CHECK(j != 2);
+   
+    vector<string> result3 = {"aaa","bbb","ccc"};
+    j=0;
+    for(auto i : filterfalse([](string i){return i.size()==3;},vector<string>{"aa","aaa","bbb","ccc"}))
+    {
+        CHECK(i == result3.at(j));
+        ++j;
+    }
+    CHECK(j == 3);
+    CHECK(j != 4);
+    CHECK(j != 0);
+    CHECK(j != 2);
+    
+    vector<double> result4 = {3.2,3.6};
+    j=0;
+    for(double i : filterfalse([](double i){return i>3;},vector<double>{2.2,3.2,3.6}))
+    {
+        CHECK(i == result4.at(j));
+        ++j;
+    }
+    CHECK(j == 2);
+    CHECK(j != 3);
+    CHECK(j != 1);
+    CHECK(j != 0);
+    
+}
 
     
