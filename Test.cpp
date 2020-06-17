@@ -289,7 +289,7 @@ TEST_CASE("COMPRESS")
   
     vector<int> result1{2,4,6};
     int j=0;
-    for(auto i : compress(reuslt1,ttt))
+    for(auto i : compress(result1,ttt))
     {
         CHECK(i == result1.at(j));
         ++j;
