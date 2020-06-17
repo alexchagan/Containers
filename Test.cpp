@@ -66,6 +66,10 @@ vector<double> vecDouble = {0.5, -2.0, 3.0};
 array<int, 3> a = {-1,-2,-3};
 list<string> l = {"Very" , "Good" };
 range r(1,3);
+    
+int ans_int=0;
+string ans_str="";
+double ans_d=0.0;
 
     ans_int=0;
     for(int i: accumulate(vecInt))
