@@ -248,7 +248,7 @@ TEST_CASE("Filter False")
     vector<int> result3 = {4,10};
     vector<int> vec{1,2,3};
     j=0;
-    for(int i : filterfalse([](int i){return i>3;},accumulate(vec)))
+    for(int i : filterfalse([](int i){return i>3;},accumulate(vec))
     {
         CHECK(i == result3.at(j));
         ++j;
@@ -269,7 +269,28 @@ TEST_CASE("Filter False")
     CHECK(j != 3);
     CHECK(j != 1);
     CHECK(j != 0);
-    
+}
+
+TEST_CASE("COMPRESS")
+{
+ 
+ CHECK_NOTHROW(compress(string("abc"), tff)); //76
+  CHECK_NOTHROW(compress(string("abc"), fff)); //77
+  CHECK_NOTHROW(compress(string("abc"), ttt)); //78
+  CHECK_NOTHROW(compress(string("abc"), tft)); //79
+  CHECK_NOTHROW(compress(string("abc"), fft)); //80
+  CHECK_NOTHROW(compress(vecInt, ttt)); //81
+  CHECK_NOTHROW(compress(range(1,4), tff)); //82
+  CHECK_NOTHROW(compress(accumulate(vecInt), tff)); //83
+  CHECK_NOTHROW(compress( accumulate(vecInt,[](int x, int y){return x*y;}), fft) ); //84
+  CHECK_NOTHROW(compress( filterfalse([](int i){return i%2==0},accumulate(vecInt,[](int x, int y){return x*y;})), fft)); //85
+  CHECK_THROWS(compress(string("abc"), tfft)); //86
+  CHECK_THROWS(compress(string("abc"), dft)); //87
+  CHECK_THROWS(compress(string("abcd"), tff)); //88
+  CHECK_THROWS(compress(string("abc"), f ft)); //87
+   CHECK_THROWS(compress()); //99
+   CHECK_THROWS(compress(tf)); //100
+      
 }
 
     
