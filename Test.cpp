@@ -26,7 +26,7 @@ TEST_CASE("Range Test")
     CHECK(j != 6);
     
     vector<int> result2 = {-5,-4,-3,-2,-1};
-    int j=0;
+    j=0;
     for(int i : range(-5,1))
     {
         CHECK(i == result2.at(j));
@@ -66,7 +66,7 @@ vector<double> vecDouble = {0.5, -2.0, 3.0};
 array<int, 3> a = {-1,-2,-3};
 list<string> l = {"Very" , "Good" };
 range r(1,3);
-    
+
 int ans_int=0;
 string ans_str="";
 double ans_d=0.0;
@@ -130,7 +130,7 @@ double ans_d=0.0;
     
     
     vector<int> result2 = {1};
-    int j=0;
+    j=0;
     for(int i : singleVecInt)
     {
         CHECK(i == result2.at(j));
