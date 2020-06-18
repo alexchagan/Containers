@@ -196,7 +196,7 @@ vector<int> result2 {1,2,6};
 
 vector<string> result4 {"This","ThisIs","ThisIsWorking"};
      j=0;
-    for(string i : accumulate(vector<string>{"This","Is","Working"},[](string x, string y){return x+y;}))
+    for(auto i : accumulate(vector<string>{"This","Is","Working"},[](string x, string y){return x+y;}))
     {
         CHECK(i == result4.at(j));
         ++j;
