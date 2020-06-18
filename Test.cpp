@@ -125,9 +125,7 @@ double ans_d=0.0;
         ++j;
     }
     CHECK(j == 3);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
+
     
     
     vector<int> result2 {1};
@@ -138,8 +136,7 @@ double ans_d=0.0;
         ++j;
     }
     CHECK(j == 1);
-//     CHECK(j != 2);
-//     CHECK(j != 0);
+
     
     vector<string> result3 {"This","ThisIs","ThisIsWorking"};
     j=0;
@@ -149,9 +146,7 @@ double ans_d=0.0;
         ++j;
     }
     CHECK(j == 3);
-//     CHECK(j != 2);
-//     CHECK(j != 0);
-//     CHECK(j != 4);
+
     
     vector<double> result4 {0.5,1.0,1.5};
     j=0;
@@ -161,9 +156,7 @@ double ans_d=0.0;
         ++j;
     }
     CHECK(j == 3);
-//     CHECK(j != 2);
-//     CHECK(j != 0);
-//     CHECK(j != 4);
+
 }
 
 TEST_CASE("Accumulate with binary operator")
@@ -177,9 +170,7 @@ TEST_CASE("Accumulate with binary operator")
         ++j;
     }
     CHECK(j == 10);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
+
    
 
 vector<int> result2 {1,2,6};
@@ -190,36 +181,20 @@ vector<int> result2 {1,2,6};
         ++j;
     }
     CHECK(j == 3);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
 
-// vector<string> result4 {"This","ThisIs","ThisIsWorking"};
-//      j=0;
-//     for(auto i : accumulate(vector<string>{"This","Is","Working"},[](string x, string y){return x+y;}))
-//     {
-//         CHECK(i == result4.at(j));
-//         ++j;
-//     }
-//     CHECK(j == 3);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
 }
 
 TEST_CASE("Filter False")
 {
-    vector<int> result1 {2,4,6,8,10,12,16,50};
+    vector<int> result1 {2,4,6,8,10,12,14,16};
     int j=0;
-    for(int i : filterfalse([](int i){return i%2!=0;},range(2,51)))
+    for(int i : filterfalse([](int i){return i%2!=0;},range(2,17)))
     {
         CHECK(i == result1.at(j));
         ++j;
     }
-    CHECK(j == 3);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
+    CHECK(j == 8);
+
     
     vector<int> result2 {2,2,2};
     j=0;
@@ -229,9 +204,7 @@ TEST_CASE("Filter False")
         ++j;
     }
     CHECK(j == 3);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
+
    
     vector<int> result3 {4,10};
     vector<int> vec{1,2,3};
@@ -242,10 +215,7 @@ TEST_CASE("Filter False")
         ++j;
     }
     CHECK(j == 2);
-//     CHECK(j != 3);
-//     CHECK(j != 0);
-//     CHECK(j != 1);
-    
+
     vector<double> result4 {3.2,3.6};
     j=0;
     for(double i : filterfalse([](double i){return i>3;},vector<double>{2.2,3.2,3.6}))
@@ -254,9 +224,7 @@ TEST_CASE("Filter False")
         ++j;
     }
     CHECK(j == 2);
-//     CHECK(j != 3);
-//     CHECK(j != 1);
-//     CHECK(j != 0);
+
 }
 
 TEST_CASE("COMPRESS")
@@ -284,9 +252,7 @@ TEST_CASE("COMPRESS")
         ++j;
     }
     CHECK(j == 3);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
+
     
     vector<string> result2 = {"Hi","Bye"};
     j=0;
@@ -296,9 +262,7 @@ TEST_CASE("COMPRESS")
         ++j;
     }
     CHECK(j == 2);
-//     CHECK(j != 3);
-//     CHECK(j != 0);
-//     CHECK(j != 1);
+
    
     vector<int> result3 = {1,2,4,5,6,7,9,10};
     j=0;
