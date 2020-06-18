@@ -191,14 +191,14 @@ TEST_CASE("Filter False")
     CHECK(j == 8);
 
     
-    vector<int> result2 {2,2,2};
-    j=0;
-    for(int i : filterfalse([](int i){return i==2;},vector<int>{1,2,3,2,4,2}))
+    vector<int> result2 {3,5,7,9,11,13,15};
+    int j=0;
+    for(int i : filterfalse([](int i){return i%2==0;},range(2,17)))
     {
         CHECK(i == result2.at(j));
         ++j;
     }
-    CHECK(j == 3);
+    CHECK(j == 7);
 
    
     vector<int> result3 {3,6};
