@@ -21,9 +21,6 @@ TEST_CASE("Range Test")
         ++j;
     }
     CHECK(j == 5);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 6);
     
     vector<int> result2 {-5,-4,-3,-2,-1};
     j=0;
@@ -33,9 +30,7 @@ TEST_CASE("Range Test")
         ++j;
     }
     CHECK(j == 5);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 6);
+
     
     int ans_int=0;
     
@@ -206,10 +201,10 @@ TEST_CASE("Filter False")
     CHECK(j == 3);
 
    
-    vector<int> result3 {4,10};
+    vector<int> result3 {3,6};
     vector<int> vec{1,2,3};
     j=0;
-    for(int i : filterfalse([](int i){return i>3;},accumulate(vec)))
+    for(int i : filterfalse([](int i){return i>2;},accumulate(vec)))
     {
         CHECK(i == result3.at(j));
         ++j;
