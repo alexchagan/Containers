@@ -280,6 +280,7 @@ TEST_CASE("COMPRESS")
  vector<bool> tft{true,false,true};
  vector<bool> fft{false,false,true};
  vector<bool> tfft{true,false,false,true};
+  vector<bool> ttf{true,true,false};
  
   CHECK_NOTHROW(compress(string("abc"), tff)); //76
   CHECK_NOTHROW(compress(string("abc"), fff)); //77
@@ -289,7 +290,7 @@ TEST_CASE("COMPRESS")
   
     vector<int> result1{2,4,6};
     int j=0;
-    for(auto i : compress(result1,ttt))
+    for(auto i : compress(vector<int>{2,4,6},ttt))
     {
         CHECK(i == result1.at(j));
         ++j;
