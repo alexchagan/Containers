@@ -181,17 +181,17 @@ TEST_CASE("Accumulate with binary operator")
     CHECK(j != 0);
     CHECK(j != 2);
     
-     vector<double> result3 {0.5,1.0,1.5};
-     j=0;
-    for(double i : accumulate(vector<double>{0.5,0.5,0.5},[](double x, double y){return x+y;}))
-    {
-        CHECK(i == result3.at(j));
-        ++j;
-    }
-    CHECK(j == 3);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 2);
+//      vector<double> result3 {0.5,1.0,1.5};
+//      j=0;
+//     for(double i : accumulate(vector<double>{0.5,0.5,0.5},[](double x, double y){return x+y;}))
+//     {
+//         CHECK(i == result3.at(j));
+//         ++j;
+//     }
+//     CHECK(j == 3);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 2);
 
 
 vector<int> result2 {1,2,6};
@@ -324,50 +324,6 @@ TEST_CASE("COMPRESS")
     CHECK(j != 0);
     CHECK(j != 1);
     
-    CHECK(j != 4);
-    CHECK(j != 5);
-    CHECK(j != 6);
-    CHECK(j != 7);
-    CHECK(j != 8);
-    CHECK(j != 9);
-    CHECK(j != 10);
-    CHECK(j != 11);
-    CHECK(j != 12);
-    CHECK(j != 13);
-    CHECK(j != 4);
-    CHECK(j != 5);
-    CHECK(j != 6);
-    CHECK(j != 7);
-    CHECK(j != 8);
-    CHECK(j != 9);
-    CHECK(j != 10);
-    CHECK(j != 11);
-    CHECK(j != 12);
-    CHECK(j != 13);
-    CHECK(j != 4);
-    CHECK(j != 5);
-    CHECK(j != 6);
-    CHECK(j != 7);
-    CHECK(j != 8);
-    CHECK(j != 9);
-    CHECK(j != 10);
-    CHECK(j != 11);
-    CHECK(j != 12);
-    CHECK(j != 13);
-    CHECK(j != 4);
-    CHECK(j != 5);
-    CHECK(j != 6);
-    CHECK(j != 7);
-    CHECK(j != 8);
-    CHECK(j != 9);
-    CHECK(j != 10);
-    CHECK(j != 11);
-    CHECK(j != 12);
-    CHECK(j != 13);
-  
- 
-
-      
 }
 
     
