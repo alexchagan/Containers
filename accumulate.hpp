@@ -33,6 +33,8 @@ namespace itertools {
         //We need a reference to reference ctor in order to support passing reference of rvalue(for range())
         explicit accumulate(Iter && iter): _iter(iter), _beg(_iter.begin()), _end_iter(iter.end()) {}
 
+        //Support both rvalue and lvalue
+        accumulate(Iter & iter, lambada func): _iter(iter), _func(func), _beg(_iter.begin()), _end_iter(iter.end()){}
         accumulate(Iter && iter, lambada func): _iter(iter), _func(func), _beg(_iter.begin()), _end_iter(iter.end()){}
 
         template <typename U>
