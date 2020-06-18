@@ -300,14 +300,14 @@ TEST_CASE("COMPRESS")
 //     CHECK(j != 0);
 //     CHECK(j != 1);
    
-    vector<int> result3 = {1,2};
+    vector<int> result3 = {1,2,4,5,6,7,9,10};
     j=0;
-    for(int i : compress(range(1,3),ttf))
+    for(int i : compress(range(1,11),ttfttttftt))
     {
         CHECK(i == result3.at(j));
         ++j;
     }
-    CHECK(j == 2);
+    CHECK(j == 8);
 //     CHECK(j != 3);
 //     CHECK(j != 0);
 //     CHECK(j != 1);
