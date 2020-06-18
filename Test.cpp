@@ -205,7 +205,7 @@ vector<int> result2 {1,2,6};
 //     CHECK(j != 4);
 //     CHECK(j != 0);
 //     CHECK(j != 2);
-// }
+}
 
 TEST_CASE("Filter False")
 {
