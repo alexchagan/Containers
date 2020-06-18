@@ -209,9 +209,9 @@ vector<int> result2 {1,2,6};
 
 TEST_CASE("Filter False")
 {
-    vector<int> result1 {2,4,6};
+    vector<int> result1 {2,4,6,8,10,12,16,50};
     int j=0;
-    for(int i : filterfalse([](int i){return i%2==0;},range(2,7)))
+    for(int i : filterfalse([](int i){return i%2==0;},range(2,51)))
     {
         CHECK(i == result1.at(j));
         ++j;
@@ -309,27 +309,6 @@ TEST_CASE("COMPRESS")
     }
     CHECK(j == 8);
     ///////////////////
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
     
 }
 
