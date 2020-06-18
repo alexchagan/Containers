@@ -269,7 +269,7 @@ TEST_CASE("COMPRESS")
  vector<bool> fft{false,false,true};
  vector<bool> tfft{true,false,false,true};
   vector<bool> ttf{true,true,false};
- 
+ vector<bool> ttfttttftt{true,true,false,true,true,true,true,false,true,true};
   CHECK_NOTHROW(compress(string("abc"), tff)); //76
   CHECK_NOTHROW(compress(string("abc"), fff)); //77
   CHECK_NOTHROW(compress(string("abc"), ttt)); //78
