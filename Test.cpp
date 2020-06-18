@@ -211,7 +211,7 @@ TEST_CASE("Filter False")
 {
     vector<int> result1 {2,4,6,8,10,12,16,50};
     int j=0;
-    for(int i : filterfalse([](int i){return i%2==0;},range(2,51)))
+    for(int i : filterfalse([](int i){return i%2!=0;},range(2,51)))
     {
         CHECK(i == result1.at(j));
         ++j;
