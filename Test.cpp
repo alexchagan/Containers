@@ -323,7 +323,17 @@ TEST_CASE("COMPRESS")
     CHECK(j != 3);
     CHECK(j != 0);
     CHECK(j != 1);
+    
     CHECK(j != 4);
+    CHECK(j != 5);
+    CHECK(j != 6);
+    CHECK(j != 7);
+    CHECK(j != 8);
+    CHECK(j != 9);
+    CHECK(j != 10);
+    CHECK(j != 11);
+    CHECK(j != 12);
+    CHECK(j != 13);
   
  
 
