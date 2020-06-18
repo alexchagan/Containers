@@ -182,7 +182,7 @@ vector<int> result2 {1,2,6};
 TEST_CASE("Filter False")
 {
     vector<int> result1 {2,4,6,8,10,12,14,16};
-    j=0;
+    int j=0;
     for(int i : filterfalse([](int i){return i%2!=0;},range(2,17)))
     {
         CHECK(i == result1.at(j));
@@ -192,7 +192,7 @@ TEST_CASE("Filter False")
 
     
     vector<int> result2 {3,5,7,9,11,13,15};
-    int j=0;
+    j=0;
     for(int i : filterfalse([](int i){return i%2==0;},range(2,17)))
     {
         CHECK(i == result2.at(j));
