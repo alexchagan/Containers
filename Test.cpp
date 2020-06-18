@@ -169,14 +169,14 @@ double ans_d=0.0;
 TEST_CASE("Accumulate with binary operator")
 {
 
-    vector<int> result1 {1,3,6};
+    vector<int> result1 {1,3,6,10,15,21,28,36,45,55};
     int j=0;
-    for(int i : accumulate(range(1,4),[](int x, int y){return x+y;}))
+    for(int i : accumulate(range(1,11),[](int x, int y){return x+y;}))
     {
         CHECK(i == result1.at(j));
         ++j;
     }
-    CHECK(j == 3);
+    CHECK(j == 10);
 //     CHECK(j != 4);
 //     CHECK(j != 0);
 //     CHECK(j != 2);
