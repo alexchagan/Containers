@@ -201,24 +201,15 @@ TEST_CASE("Filter False")
     CHECK(j == 7);
 
    
-    vector<int> result3 {3,6};
-    vector<int> vec{1,2,3};
+    vector<int> result3 {3,6,10,15,21,28,36,45,55};
+    vector<int> vec{1,2,3,4,5,6,7,8,9,10};
     j=0;
     for(int i : filterfalse([](int i){return i<2;},accumulate(vec)))
     {
         CHECK(i == result3.at(j));
         ++j;
     }
-    CHECK(j == 2);
-
-    vector<double> result4 {3.2,3.6};
-    j=0;
-    for(double i : filterfalse([](double i){return i<3;},vector<double>{2.2,3.2,3.6}))
-    {
-        CHECK(i == result4.at(j));
-        ++j;
-    }
-    CHECK(j == 2);
+    CHECK(j == 9);
 
 }
 
