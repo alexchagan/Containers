@@ -21,9 +21,9 @@ TEST_CASE("Range Test")
         ++j;
     }
     CHECK(j == 5);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 6);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 6);
     
     vector<int> result2 {-5,-4,-3,-2,-1};
     j=0;
@@ -33,9 +33,9 @@ TEST_CASE("Range Test")
         ++j;
     }
     CHECK(j == 5);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 6);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 6);
     
     int ans_int=0;
     
@@ -125,9 +125,9 @@ double ans_d=0.0;
         ++j;
     }
     CHECK(j == 3);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 2);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 2);
     
     
     vector<int> result2 {1};
@@ -138,8 +138,8 @@ double ans_d=0.0;
         ++j;
     }
     CHECK(j == 1);
-    CHECK(j != 2);
-    CHECK(j != 0);
+//     CHECK(j != 2);
+//     CHECK(j != 0);
     
     vector<string> result3 {"This","ThisIs","ThisIsWorking"};
     j=0;
@@ -149,9 +149,9 @@ double ans_d=0.0;
         ++j;
     }
     CHECK(j == 3);
-    CHECK(j != 2);
-    CHECK(j != 0);
-    CHECK(j != 4);
+//     CHECK(j != 2);
+//     CHECK(j != 0);
+//     CHECK(j != 4);
     
     vector<double> result4 {0.5,1.0,1.5};
     j=0;
@@ -161,9 +161,9 @@ double ans_d=0.0;
         ++j;
     }
     CHECK(j == 3);
-    CHECK(j != 2);
-    CHECK(j != 0);
-    CHECK(j != 4);
+//     CHECK(j != 2);
+//     CHECK(j != 0);
+//     CHECK(j != 4);
 }
 
 TEST_CASE("Accumulate with binary operator")
@@ -177,9 +177,9 @@ TEST_CASE("Accumulate with binary operator")
         ++j;
     }
     CHECK(j == 3);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 2);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 2);
    
 
 vector<int> result2 {1,2,6};
@@ -190,9 +190,9 @@ vector<int> result2 {1,2,6};
         ++j;
     }
     CHECK(j == 3);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 2);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 2);
 
 // vector<string> result4 {"This","ThisIs","ThisIsWorking"};
 //      j=0;
@@ -217,9 +217,9 @@ TEST_CASE("Filter False")
         ++j;
     }
     CHECK(j == 3);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 2);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 2);
     
     vector<int> result2 {2,2,2};
     j=0;
@@ -229,9 +229,9 @@ TEST_CASE("Filter False")
         ++j;
     }
     CHECK(j == 3);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 2);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 2);
    
     vector<int> result3 {4,10};
     vector<int> vec{1,2,3};
@@ -242,9 +242,9 @@ TEST_CASE("Filter False")
         ++j;
     }
     CHECK(j == 2);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
+//     CHECK(j != 3);
+//     CHECK(j != 0);
+//     CHECK(j != 1);
     
     vector<double> result4 {3.2,3.6};
     j=0;
@@ -254,9 +254,9 @@ TEST_CASE("Filter False")
         ++j;
     }
     CHECK(j == 2);
-    CHECK(j != 3);
-    CHECK(j != 1);
-    CHECK(j != 0);
+//     CHECK(j != 3);
+//     CHECK(j != 1);
+//     CHECK(j != 0);
 }
 
 TEST_CASE("COMPRESS")
@@ -284,9 +284,9 @@ TEST_CASE("COMPRESS")
         ++j;
     }
     CHECK(j == 3);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 2);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 2);
     
     vector<string> result2 = {"Hi","Bye"};
     j=0;
@@ -296,9 +296,9 @@ TEST_CASE("COMPRESS")
         ++j;
     }
     CHECK(j == 2);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
+//     CHECK(j != 3);
+//     CHECK(j != 0);
+//     CHECK(j != 1);
    
     vector<int> result3 = {1,2};
     j=0;
@@ -308,9 +308,9 @@ TEST_CASE("COMPRESS")
         ++j;
     }
     CHECK(j == 2);
-    CHECK(j != 3);
-    CHECK(j != 0);
-    CHECK(j != 1);
+//     CHECK(j != 3);
+//     CHECK(j != 0);
+//     CHECK(j != 1);
     
 }
 
