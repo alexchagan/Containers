@@ -308,9 +308,10 @@ TEST_CASE("COMPRESS")
         ++j;
     }
     CHECK(j == 8);
-//     CHECK(j != 3);
-//     CHECK(j != 0);
-//     CHECK(j != 1);
+    ///////////////////
+    CHECK(j != 3);
+    CHECK(j != 0);
+    CHECK(j != 1);
     
 }
 
