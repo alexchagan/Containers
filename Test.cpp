@@ -299,30 +299,29 @@ TEST_CASE("COMPRESS")
     CHECK(j != 0);
     CHECK(j != 2);
     
-    // vector<int> result2 = {2,2,2};
-    // j=0;
-    // for(int i : compress())
-    // {
-    //     CHECK(i == result2.at(j));
-    //     ++j;
-    // }
-    // CHECK(j == 3);
-    // CHECK(j != 4);
-    // CHECK(j != 0);
-    // CHECK(j != 2);
+    vector<string> result2 = {"Hi","Bye"};
+    j=0;
+        for(auto i : compress(vector<string>{"Hi","Hello","Bye"},tft))
+    {
+        CHECK(i == result2.at(j));
+        ++j;
+    }
+    CHECK(j == 2);
+    CHECK(j != 3);
+    CHECK(j != 0);
+    CHECK(j != 1);
    
-    // vector<int> result3 = {4,10};
-    // vector<int> vec{1,2,3};
-    // j=0;
-    // for(int i : compress())
-    // {
-    //     CHECK(i == result3.at(j));
-    //     ++j;
-    // }
-    // CHECK(j == 2);
-    // CHECK(j != 3);
-    // CHECK(j != 0);
-    // CHECK(j != 1);
+    vector<int> result3 = {1,2};
+    j=0;
+    for(int i : compress(range(1,3),ttf))
+    {
+        CHECK(i == result3.at(j));
+        ++j;
+    }
+    CHECK(j == 2);
+    CHECK(j != 3);
+    CHECK(j != 0);
+    CHECK(j != 1);
   
  
 
