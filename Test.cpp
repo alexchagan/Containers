@@ -180,19 +180,7 @@ TEST_CASE("Accumulate with binary operator")
     CHECK(j != 4);
     CHECK(j != 0);
     CHECK(j != 2);
-    
-//      vector<double> result3 {0.5,1.0,1.5};
-//      j=0;
-//     for(double i : accumulate(vector<double>{0.5,0.5,0.5},[](double x, double y){return x+y;}))
-//     {
-//         CHECK(i == result3.at(j));
-//         ++j;
-//     }
-//     CHECK(j == 3);
-//     CHECK(j != 4);
-//     CHECK(j != 0);
-//     CHECK(j != 2);
-
+   
 
 vector<int> result2 {1,2,6};
      j=0;
