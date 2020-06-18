@@ -194,18 +194,18 @@ vector<int> result2 {1,2,6};
     CHECK(j != 0);
     CHECK(j != 2);
 
-vector<string> result4 {"This","ThisIs","ThisIsWorking"};
-     j=0;
-    for(auto i : accumulate(vector<string>{"This","Is","Working"},[](string x, string y){return x+y;}))
-    {
-        CHECK(i == result4.at(j));
-        ++j;
-    }
-    CHECK(j == 3);
-    CHECK(j != 4);
-    CHECK(j != 0);
-    CHECK(j != 2);
-}
+// vector<string> result4 {"This","ThisIs","ThisIsWorking"};
+//      j=0;
+//     for(auto i : accumulate(vector<string>{"This","Is","Working"},[](string x, string y){return x+y;}))
+//     {
+//         CHECK(i == result4.at(j));
+//         ++j;
+//     }
+//     CHECK(j == 3);
+//     CHECK(j != 4);
+//     CHECK(j != 0);
+//     CHECK(j != 2);
+// }
 
 TEST_CASE("Filter False")
 {
